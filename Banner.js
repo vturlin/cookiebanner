@@ -3,7 +3,7 @@ var dl_domain='monnouveaum2.com'; //le domaine du site sur lequel la banniÃ¨re
 var dl_policies='https://monnouveaum2.com/politique-de-confidentialite/'; //le lien vers les policies du site
 var dl_logo="https://monnouveaum2.com/wp-content/uploads/2022/05/Logo-Mon-Nouveau-m2.svg";//le logo du site, au format png
 var dl_couleur_primaire="98,0,238";//couleur primaire de la charte du site 
-var dl_css='https://github.com/vturlin/cookiebanner/blob/77163d3fd3547edc2ae698ac80cbaae6511e236a/Banner.css';//lien vers le fichier CSS
+var dl_css='https://vturlin.github.io/cookiebanner/Banner.css';//lien vers le fichier CSS
 var dl_police='https://fonts.googleapis.com/css?family=Roboto&display=swap';//lien vers la police de la charte du site
 
 //FONCTIONS JAVASCRIPT
