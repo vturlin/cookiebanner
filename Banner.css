@@ -36,7 +36,7 @@ left:0;
   top:50%;
   transform:translate(0, -50%);
   height:auto;
-  max height: 95%;
+  max-height: 95%;
   min-height:50px;
   max-width:850px;
   left:0;
@@ -121,7 +121,6 @@ left:0;
   grid-column:2/3;
   grid-row:1;
 }
-
 .cmptitleprefcenter{
   text-align:left;
   grid-column:1/3;
@@ -132,8 +131,11 @@ left:0;
 }
 .cmptitle{
   text-align:left;
-  border:0;font-family:roboto;
+  border:0;
+  font-family:roboto;
   font-size:1.1rem;
+  align-self: center;
+  justify-self: center;
 }
 .cmpdescription{
   text-align:justify;
@@ -174,7 +176,8 @@ left:0;
   font-size:0.9rem;
   text-decoration: underline;
   right:0px;
-  text-align:right;
+  align-self: center;
+  justify-self: right;
   cursor: pointer;
 }
 .cmplink{
