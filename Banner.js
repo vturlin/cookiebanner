@@ -82,6 +82,7 @@ if(consent_record == "absent" || consent_mode == "absent" || consent_mode == "em
 
 var css_link = document.createElement('link')
 css_link.setAttribute('rel','stylesheet')
+css_link.setAttribute('type','text/css')	
 css_link.setAttribute('href',dl_css)
 document.head.appendChild(css_link)
 
