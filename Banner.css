@@ -97,13 +97,13 @@ left:0;
 }
 .cmpcategory_1{
   postion:relative;
-  background:rgba(98,0,238,0.11999999731779099);
+  background:#c6ce000f;
   border-radius:4px;
   margin-top:20px;
   padding:1%;
   border: 1.5px;
   border-style: solid;
-  border-color: rgba(98,0,238);
+  border-color: #c6ce00;
 }
 .cmpcategory_2{
   postion:relative;
@@ -227,13 +227,13 @@ left:0;
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: rgba(98,0,238,0.11999999731779099);
+  background-color: #c6ce005c;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
   transform: translateX(15px);
-  background-color: rgba(98,0,238,1);
+  background-color: #b4bb0f;
 }
 /* Rounded sliders */
 .slider.round {
