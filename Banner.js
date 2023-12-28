@@ -7,6 +7,51 @@ var dl_css='https://vturlin.github.io/cookiebanner/Banner.css';//lien vers le fi
 var dl_police='https://fonts.googleapis.com/css?family=Roboto&display=swap';//lien vers la police de la charte du site
 
 //FONCTIONS JAVASCRIPT
+function GCM_setdefaultconsent(){
+	gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+}
+
+function GCM_setupdatedconsent_ads(consent){
+	if(consent = '4'){
+	gtag('consent', 'update', {
+    	'ad_storage': 'granted'
+  	});
+	gtag('consent', 'update', {
+    	'ad_personalization': 'granted'
+  	});
+	gtag('consent', 'update', {
+    	'ad_user_data': 'granted'
+  	});	
+	}
+	else{
+	gtag('consent', 'update', {
+    	'ad_storage': 'denied'
+  	});
+	gtag('consent', 'update', {
+    	'ad_personalization': 'denied'
+  	});
+	gtag('consent', 'update', {
+    	'ad_user_data': 'denied'
+  	});
+	}
+}
+
+function GCM_setupdatedconsent_analytics(consent){
+	if(consent = '2'){
+	gtag('consent', 'update', {
+    'analytics_storage': 'granted'
+  });}
+	else{
+	gtag('consent', 'update', {
+    	'analytics_storage': 'denied'
+  });}
+}
+	
 function setCookie(consent) {//function to set cookie on domain
 	function addDaysToDate(date, days){  //function to create neux expiring date for cookie
     				var res = new Date(date);
@@ -76,10 +121,11 @@ function pop(button) {
 //STRUCTURE HTML/CSS	
 var consent_record = getCookie('consent_record')//if the cookie isn't set then create it empty
 var consent_mode = getCookie('consent_mode')
+GCM_setdefaultconsent()
 if(consent_record == "absent" || consent_mode == "absent" || consent_mode == "empty" ){
 		
 		setCookie('empty')
-
+		
 var css_link = document.createElement('link')
 css_link.setAttribute('rel','stylesheet')
 css_link.setAttribute('type','text/css')	
@@ -204,6 +250,8 @@ dataLayer.push({
 })
 setCookie(consent_mode)
 newCookie(consent_mode)
+GCM_setupdatedconsent_ads(consent_mode)
+GCM_setupdatedconsent_analytics(consent_mode)
 banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 } // displays the banner
@@ -211,4 +259,6 @@ banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0
 	event:'consent_mode_updated',
 	'consent_mode' : consent_mode
 })
+GCM_setupdatedconsent_ads(consent_mode)
+GCM_setupdatedconsent_analytics(consent_mode)
 }
