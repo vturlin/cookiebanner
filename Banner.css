@@ -133,7 +133,6 @@ left:0;
   text-align:center;
   color:rgba(98,0,238,1);
   background-color:rgba(98,0,238,0.11999999731779099);
-  border-radius:4px;
   padding:1%;
   border:none;
   margin-top:15px;
@@ -161,7 +160,6 @@ left:0;
   text-align:center;
   color: white;
   background-color: black;
-  border-radius: 4px;
   cursor: pointer;
 }
 .cmpfavoritestyled2{
