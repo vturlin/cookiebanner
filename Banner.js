@@ -23,7 +23,7 @@ function GCM_setupdatedconsent_ads(consent){
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	
-	if(consent == '4'){
+	consent.includes('4') ? 
 	gtag('consent', 'update', {
     	'ad_storage': 'granted'
   	});
@@ -34,7 +34,7 @@ function GCM_setupdatedconsent_ads(consent){
     	'ad_user_data': 'granted'
   	});	
 	}
-	else{
+	:
 	gtag('consent', 'update', {
     	'ad_storage': 'denied'
   	});
@@ -52,11 +52,11 @@ function GCM_setupdatedconsent_analytics(consent){
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	
-	if(consent == '2'){
+	consent.includes('2') ?
 	gtag('consent', 'update', {
     'analytics_storage': 'granted'
   });}
-	else{
+	:
 	gtag('consent', 'update', {
     	'analytics_storage': 'denied'
   });}
