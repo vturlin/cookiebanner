@@ -15,7 +15,7 @@ function setCookie(consent) {//function to set cookie on domain
 
 		var date_now = Date()
 		var expires = addDaysToDate(date_now,365)
-		document. = 'consent_mode='+ consent + ';expires=' + expires + ';domain=.' + dl_domain + ';path=/'
+		document.cookie = 'consent_mode='+ consent + ';expires=' + expires + ';domain=.' + dl_domain + ';path=/'
 		dataLayer.push({  //add the updated information to the dataLayer
 		'event':'consent_mode_updated',
 		'consent_mode' : consent
