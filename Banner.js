@@ -19,6 +19,10 @@ function gtag(){dataLayer.push(arguments);}
 }
 
 function GCM_setupdatedconsent_ads(consent){
+	
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	
 	if(consent = '4'){
 	gtag('consent', 'update', {
     	'ad_storage': 'granted'
@@ -44,6 +48,10 @@ function GCM_setupdatedconsent_ads(consent){
 }
 
 function GCM_setupdatedconsent_analytics(consent){
+	
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	
 	if(consent = '2'){
 	gtag('consent', 'update', {
     'analytics_storage': 'granted'
