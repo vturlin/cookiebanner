@@ -225,14 +225,21 @@ var check_box_3 = document.getElementById('check_3')
 }})
 		var accept = document.getElementById('accept')
 accept.addEventListener('click',function(){ //function on accept CTA click 
-		setCookie('1,2,3,4')
-        newCookie('1,2,3,4')
+		var consent_update = '1,2,3,4'
+		setCookie(consent_update)
+        	newCookie(consent_update)
+		GCM_setupdatedconsent_analytics(consent_update)
+		GCM_setupdatedconsent_ads(consent_update)
+	
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 var denied = document.getElementById('denied')
 denied.addEventListener('click',function(){  //function on refuse CTA click
-		setCookie('1')
-        newCookie('1')
+		var consent_update = '1'
+		setCookie(consent_update)
+        	newCookie(consent_update)
+		GCM_setupdatedconsent_analytics(consent_update)
+		GCM_setupdatedconsent_ads(consent_update)
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 
