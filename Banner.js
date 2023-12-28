@@ -7,57 +7,56 @@ var dl_css='https://vturlin.github.io/cookiebanner/Banner.css';//lien vers le fi
 var dl_police='https://fonts.googleapis.com/css?family=Roboto&display=swap';//lien vers la police de la charte du site
 
 //FONCTIONS JAVASCRIPT
-function GCM_setdefaultconsent(){
-	window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+
+function GCM_setdefaultconsent(){
 	gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied',
-  'analytics_storage': 'denied'
-});
+  	'ad_storage': 'denied',
+  	'ad_user_data': 'denied',
+  	'ad_personalization': 'denied',
+  	'analytics_storage': 'denied'
+	});
 }
 
-function GCM_setupdatedconsent_ads(consent){
-	
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	
+function GCM_setupdatedconsent_ads(consent){	
 	consent.includes('4') ? 
 	gtag('consent', 'update', {
     	'ad_storage': 'granted'
   	})
-	gtag('consent', 'update', {
-    	'ad_personalization': 'granted'
-  	})
-	gtag('consent', 'update', {
-    	'ad_user_data': 'granted'
-  	})	
 	:
 	gtag('consent', 'update', {
     	'ad_storage': 'denied'
   	})
+function GCM_setupdatedconsent_ad_perso(consent){
+	consent.includes('4') ? 
+	gtag('consent', 'update', {
+    	'ad_personalization': 'granted'
+  	}):
 	gtag('consent', 'update', {
     	'ad_personalization': 'denied'
   	})
+		
+function GCM_setupdatedconsent_user_data(consent){
+	consent.includes('4') ? 
+	gtag('consent', 'update', {
+    	'ad_user_data': 'granted'
+  	})
+	:
 	gtag('consent', 'update', {
     	'ad_user_data': 'denied'
   	})
 	}
 
 function GCM_setupdatedconsent_analytics(consent){
-	
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	
 	consent.includes('2') ?
 	gtag('consent', 'update', {
-    'analytics_storage': 'granted'
-  })
+    	'analytics_storage': 'granted'
+  	})
 	:
 	gtag('consent', 'update', {
     	'analytics_storage': 'denied'
-  })
+  	})
 }
 	
 function setCookie(consent) {//function to set cookie on domain
@@ -236,7 +235,8 @@ accept.addEventListener('click',function(){ //function on accept CTA click
         	newCookie(consent_update)
 		GCM_setupdatedconsent_analytics(consent_update)
 		GCM_setupdatedconsent_ads(consent_update)
-	
+		GCM_setupdatedconsent_user_data(consent_update)
+		GCM_setupdatedconsent_ad_perso(consent_update)
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 var denied = document.getElementById('denied')
@@ -246,6 +246,8 @@ denied.addEventListener('click',function(){  //function on refuse CTA click
         	newCookie(consent_update)
 		GCM_setupdatedconsent_analytics(consent_update)
 		GCM_setupdatedconsent_ads(consent_update)
+		GCM_setupdatedconsent_user_data(consent_update)
+		GCM_setupdatedconsent_ad_perso(consent_update)
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 
@@ -267,6 +269,8 @@ setCookie(consent_mode)
 newCookie(consent_mode)
 GCM_setupdatedconsent_ads(consent_mode)
 GCM_setupdatedconsent_analytics(consent_mode)
+GCM_setupdatedconsent_user_data(consent_mode)
+GCM_setupdatedconsent_ad_perso(consent_mode)
 banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 } // displays the banner
@@ -276,4 +280,6 @@ banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0
 })
 GCM_setupdatedconsent_ads(consent_mode)
 GCM_setupdatedconsent_analytics(consent_mode)
+GCM_setupdatedconsent_user_data(consent_mode)
+GCM_setupdatedconsent_ad_perso(consent_mode)
 }
