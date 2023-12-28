@@ -28,6 +28,7 @@ function GCM_setupdatedconsent_ads(consent){
 	gtag('consent', 'update', {
     	'ad_storage': 'denied'
   	})
+}
 function GCM_setupdatedconsent_ad_perso(consent){
 	consent.includes('4') ? 
 	gtag('consent', 'update', {
@@ -36,7 +37,7 @@ function GCM_setupdatedconsent_ad_perso(consent){
 	gtag('consent', 'update', {
     	'ad_personalization': 'denied'
   	})
-		
+}		
 function GCM_setupdatedconsent_user_data(consent){
 	consent.includes('4') ? 
 	gtag('consent', 'update', {
