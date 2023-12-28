@@ -97,13 +97,13 @@ left:0;
 }
 .cmpcategory_1{
   postion:relative;
-  background:#c6ce000f;
+  background:rgba(198,206,0,0.12);
   border-radius:4px;
   margin-top:20px;
   padding:1%;
   border: 1.5px;
   border-style: solid;
-  border-color: #c6ce00;
+  border-color: rgba(198,206,0);
 }
 .cmpcategory_2{
   postion:relative;
