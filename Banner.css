@@ -52,16 +52,15 @@ left:0;
 }
 .cmpwrapper1 {
   display:grid;
-  grid-template-columns:auto auto auto;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-gap:20px;
   grid-auto-rows:minmax(20px,auto);
   align-items:center;
-  margin-top: 2%;
   margin-bottom:2%;
 }
 .cmpwrapper2 {
   display:grid;
-  grid-template-columns: 2fr 1 fr;
+  grid-template-columns: 1fr 1 fr;
   grid-gap:20px;
   grid-auto-rows:minmax(20px,auto);
   align-items:center;
