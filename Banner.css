@@ -37,7 +37,7 @@ left:0;
   transform:translate(0, -50%);
   height:auto;
   max-height: 95%;
-  min-height:50px;
+  min-height:40%;
   max-width:850px;
   left:0;
   right:0;
@@ -50,19 +50,36 @@ left:0;
   border-radius:4px;
   border-color:black;
 }
-.cmpwrapper{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-gap:30px;
-  grid-auto-rows:minmax(30px,auto);
-  align-items: center;
-}
 .cmpwrapper1 {
   display:grid;
   grid-template-columns:auto auto auto;
   grid-gap:20px;
   grid-auto-rows:minmax(20px,auto);
   align-items:center;
+  margin-top: 2%;
+  margin-bottom:2%;
+}
+.cmptitle{
+  text-align:left;
+  border:0;
+  font-family:roboto;
+  font-size:1.1rem;
+  align-self: center;
+  justify-self: center;
+}
+.cmpdescription{
+  text-align:justify;
+  text-justify:auto;
+  font-family:roboto;
+  font-size:0.9rem;
+  line-height:2rem;
+}
+.cmpwrapper{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-gap:30px;
+  grid-auto-rows:minmax(30px,auto);
+  align-items: center;
 }
 .cmpdescriptioncenter{
   margin-bottom:10px;
@@ -129,20 +146,6 @@ left:0;
   font-family:roboto;
   font-size:1.1rem;
 }
-.cmptitle{
-  text-align:left;
-  border:0;
-  font-family:roboto;
-  font-size:1.1rem;
-  align-self: center;
-  justify-self: center;
-}
-.cmpdescription{
-  text-align:justify;
-  text-justify:auto;
-  font-family:roboto;
-  font-size:0.9rem;
-}
 .cmpbutton2{
   grid-column:3/3;
   grid-row:1;
@@ -151,9 +154,9 @@ left:0;
   font-size:0.9rem;
   font-family:roboto;
   text-align:center;
-  color:rgba(98,0,238,1);
-  background-color:rgba(98,0,238,0.11999999731779099);
-  border-radius:4px;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
   cursor: pointer;
 }
 .cmpfavoritestyled2{
@@ -162,7 +165,7 @@ left:0;
   border:0;
   font-size:0.9rem;
   text-align:right;
-  color:rgba(98,0,238,1);
+  color:black;
   background-color:white;
   font-family:roboto;
   cursor: pointer;
