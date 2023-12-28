@@ -61,7 +61,7 @@ left:0;
 }
 .cmpwrapper2 {
   display:grid;
-  grid-template-columns:auto auto;
+  grid-template-columns: 2fr 1 fr;
   grid-gap:20px;
   grid-auto-rows:minmax(20px,auto);
   align-items:center;
@@ -152,7 +152,7 @@ left:0;
   font-size:1.1rem;
 }
 .cmpbutton2{
-  grid-column:3/3;
+  grid-column:2/2;
   grid-row:1;
   border:0;
   padding:1px;
@@ -164,7 +164,7 @@ left:0;
   cursor: pointer;
 }
 .cmpfavoritestyled2{
-  grid-column:2/3;
+  grid-column:1/2;
   grid-row:1;
   border:0;
   font-size:0.9rem;
@@ -181,7 +181,6 @@ left:0;
   grid-row:1;
   font-family:roboto;
   font-size:0.9rem;
-  text-decoration: underline;
   right:0px;
   align-self: center;
   justify-self: right;
