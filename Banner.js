@@ -12,43 +12,65 @@ function gtag(){dataLayer.push(arguments);}
 
 function GCM_setdefaultconsent(){
 	gtag('consent', 'default', {
-  	'ad_storage': 'denied',
-  	'ad_user_data': 'denied',
-  	'ad_personalization': 'denied',
-  	'analytics_storage': 'denied'
+  	  'ad_storage': "denied",
+	  'analytics_storage': "denied",
+	  'functionality_storage': "denied",
+	  'personalization_storage': "denied",
+	  'security_storage': "granted",
+	  'ad_user_data': "denied",
+	  'ad_personalization': "denied"
 	});
 }
 
 function GCM_setupdatedconsent_ads(consent){	
 	consent.includes('4') ? 
 	gtag('consent', 'update', {
-    	'ad_storage': 'granted'
+    	'ad_storage': 'granted',
+	'ad_personalization': 'granted',
+	'ad_user_data': 'granted',
   	})
 	:
 	gtag('consent', 'update', {
-    	'ad_storage': 'denied'
+    	'ad_storage': 'denied',
+	'ad_personalization': 'denied',
+	'ad_user_data': 'granted'
   	})
 }
-function GCM_setupdatedconsent_ad_perso(consent){
-	consent.includes('4') ? 
+function GCM_setupdatedconsent_perso(consent){
+	consent.includes('3') ? 
 	gtag('consent', 'update', {
-    	'ad_personalization': 'granted'
+    	'functionality_storage': "granted",
+	'personalization_storage': "granted",
   	}):
 	gtag('consent', 'update', {
-    	'ad_personalization': 'denied'
+    	'functionality_storage': "denied",
+	'personalization_storage': "denied",
   	})
 }		
-function GCM_setupdatedconsent_user_data(consent){
-	consent.includes('4') ? 
+function GCM_setupdatedconsent_all(){
 	gtag('consent', 'update', {
-    	'ad_user_data': 'granted'
+  	  'ad_storage': "granted",
+	  'analytics_storage': "granted",
+	  'functionality_storage': "granted",
+	  'personalization_storage': "granted",
+	  'security_storage': "granted",
+	  'ad_user_data': "granted",
+	  'ad_personalization': "granted"
   	})
-	:
-	gtag('consent', 'update', {
-    	'ad_user_data': 'denied'
-  	})
-	}
+}
 
+function GCM_setupdatedconsent_denied(){
+		gtag('consent', 'update', {
+  	  'ad_storage': "denied",
+	  'analytics_storage': "denied",
+	  'functionality_storage': "denied",
+	  'personalization_storage': "denied",
+	  'security_storage': "granted",
+	  'ad_user_data': "denied",
+	  'ad_personalization': "denied"
+	})
+}
+	
 function GCM_setupdatedconsent_analytics(consent){
 	consent.includes('2') ?
 	gtag('consent', 'update', {
@@ -234,10 +256,7 @@ accept.addEventListener('click',function(){ //function on accept CTA click
 		var consent_update = '1,2,3,4'
 		setCookie(consent_update)
         	newCookie(consent_update)
-		GCM_setupdatedconsent_analytics(consent_update)
-		GCM_setupdatedconsent_ads(consent_update)
-		GCM_setupdatedconsent_user_data(consent_update)
-		GCM_setupdatedconsent_ad_perso(consent_update)
+		GCM_setupdatedconsent_all()
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 var denied = document.getElementById('denied')
@@ -245,10 +264,7 @@ denied.addEventListener('click',function(){  //function on refuse CTA click
 		var consent_update = '1'
 		setCookie(consent_update)
         	newCookie(consent_update)
-		GCM_setupdatedconsent_analytics(consent_update)
-		GCM_setupdatedconsent_ads(consent_update)
-		GCM_setupdatedconsent_user_data(consent_update)
-		GCM_setupdatedconsent_ad_perso(consent_update)
+		GCM_setupdatedconsent_denied()
 		banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 
@@ -270,8 +286,7 @@ setCookie(consent_mode)
 newCookie(consent_mode)
 GCM_setupdatedconsent_ads(consent_mode)
 GCM_setupdatedconsent_analytics(consent_mode)
-GCM_setupdatedconsent_user_data(consent_mode)
-GCM_setupdatedconsent_ad_perso(consent_mode)
+GCM_setupdatedconsent_perso(consent_mode)
 banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0;left:0;display:none;')
 })
 } // displays the banner
@@ -281,6 +296,5 @@ banner.setAttribute('style','position:fixed;z-index:99999;top:0;right:0;bottom:0
 })
 GCM_setupdatedconsent_ads(consent_mode)
 GCM_setupdatedconsent_analytics(consent_mode)
-GCM_setupdatedconsent_user_data(consent_mode)
-GCM_setupdatedconsent_ad_perso(consent_mode)
+GCM_setupdatedconsent_perso(consent_mode)
 }
