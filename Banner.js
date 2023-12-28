@@ -1,8 +1,8 @@
 //VARIABLES
-var dl_domain='monnouveaum2.com'; //le domaine du site sur lequel la banniÃ¨re doit Ãªtre dÃ©clenchÃ©e
-var dl_policies='https://monnouveaum2.com/politique-de-confidentialite/'; //le lien vers les policies du site
-var dl_logo="https://monnouveaum2.com/wp-content/uploads/2022/05/Logo-Mon-Nouveau-m2.svg";//le logo du site, au format png
-var dl_couleur_primaire="198,206,0";//couleur primaire de la charte du site 
+//var banner_domain='monnouveaum2.com'; //le domaine du site sur lequel la banniÃ¨re doit Ãªtre dÃ©clenchÃ©e
+//var policies='https://monnouveaum2.com/politique-de-confidentialite/'; //le lien vers les policies du site
+//var banner_logo="https://monnouveaum2.com/wp-content/uploads/2022/05/Logo-Mon-Nouveau-m2.svg";//le logo du site, au format png
+//var custom_color="198,206,0";//couleur primaire de la charte du site 
 var dl_css='https://vturlin.github.io/cookiebanner/Banner.css';//lien vers le fichier CSS
 var dl_police='https://fonts.googleapis.com/css?family=Roboto&display=swap';//lien vers la police de la charte du site
 
@@ -90,7 +90,7 @@ function setCookie(consent) {//function to set cookie on domain
 
 		var date_now = Date()
 		var expires = addDaysToDate(date_now,365)
-		document.cookie = 'consent_mode='+ consent + ';expires=' + expires + ';domain=.' + dl_domain + ';path=/'
+		document.cookie = 'consent_mode='+ consent + ';expires=' + expires + ';domain=.' + banner_domain + ';path=/'
 		dataLayer.push({  //add the updated information to the dataLayer
 		'event':'consent_mode_updated',
 		'consent_mode' : consent
@@ -116,7 +116,7 @@ function newCookie(a) {//function to set cookie on domain
 var date_now = Date()
 var id = Date.now() + '.' + makeid(3)
 var expires = addDaysToDate(date_now,365)
-		document.cookie = 'consent_record='+ id + ';expires=' + expires + ';domain=.' + dl_domain + ';path=/'
+		document.cookie = 'consent_record='+ id + ';expires=' + expires + ';domain=.' + banner_domain + ';path=/'
 }
 
 function getCookie(cname){
@@ -173,10 +173,10 @@ document.body.appendChild(banner_creat)
 banner_creat.insertAdjacentHTML('afterbegin','<div id="banner" class="cmpbanner"><div id="mask" class="cmpmask"><div id="containerauto" class="cmpcontainerauto">')
 
 var center_creat = document.getElementById('containerauto')
-center_creat.insertAdjacentHTML('afterbegin','<div id="preference_center"style="padding:2%;display:none;"><div class="cmpwrapper2"> <div class="cmplogo" id="logo_pref_center"><img style="width:80px;height:60px;" src='+dl_logo+'> </div> <span class="cmptitleprefcenter" id="title_pref_center">Centre de préférences</span></div><span class="cmpdescription_center">Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies. Ces informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont principalement utilisées pour s\'assurer que le site Web fonctionne correctement. Les informations ne permettent généralement pas de vous identifier directement, mais peuvent vous permettre de bénéficier d\'une expérience Web personnalisée. Parce que nous respectons votre droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de cookies. Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d\'entre elles, et modifier les paramètres par défaut. Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.</span><div class="cmpcategory" id="category"> <div class="cmpcategory_1" id="category_1"> <span class="cmpcat_title">Cookies strictement nécessaires :</span> <span class="cmpcat_description">Ces cookies sont absolument nécessaires au bon fonctionnement de notre site et ne peuvent être désactivés.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_1" check_mode="checked" disabled="disabled" checked onclick="pop(this)"><span class="slider round"></span></label></div> </div> <div class="cmpcategory_2" id="category_2" > <span class="cmpcat_title">Cookies de mesure de la performance:</span> <span class="cmpcat_description">Ces cookies nous permettent de mesurer l\'activité des utilisateurs sur notre site. Ils nous sont importants pour vous proposer une naviagation et du contenu adaptés.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox" id="check_2"check_mode="none"onclick="pop(this)"><span class="slider round"></span> </label></div>  </div> <div class="cmpcategory_2" id="category_3"> <span class="cmpcat_title">Cookies de fonctionnalité:</span> <span class="cmpcat_description">Ces cookies nous permettent de mettre en oeuvre des fonctionnalités de personnalisation de votre expérience sur notre site</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_3"check_mode="none"onclick="pop(this)"><span class="slider round"></span></label></div> </div> <div class="cmpcategory_2" id="category_4"> <span class="cmpcat_title">Cookies de publicité ciblée:</span> <span class="cmpcat_description">Ces cookies peuvent être déposés par nos partenaires publicitaires afin de vous proposer des publicités sur des contenus pertinents et qui vous intéressent.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_4"check_mode="none"onclick="pop(this)"> <span class="slider round"> </span> </label></div> </div> </div> <div> <div class="cmpbutton1" type="button" id="save_choice">SAUVEGARDER MA SELECTION</div> </div> </div> ')
+center_creat.insertAdjacentHTML('afterbegin','<div id="preference_center"style="padding:2%;display:none;"><div class="cmpwrapper2"> <div class="cmplogo" id="logo_pref_center"><img style="width:80px;height:60px;" src='+banner_logo+'> </div> <span class="cmptitleprefcenter" id="title_pref_center">Centre de préférences</span></div><span class="cmpdescription_center">Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies. Ces informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont principalement utilisées pour s\'assurer que le site Web fonctionne correctement. Les informations ne permettent généralement pas de vous identifier directement, mais peuvent vous permettre de bénéficier d\'une expérience Web personnalisée. Parce que nous respectons votre droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de cookies. Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d\'entre elles, et modifier les paramètres par défaut. Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.</span><div class="cmpcategory" id="category"> <div class="cmpcategory_1" id="category_1"> <span class="cmpcat_title">Cookies strictement nécessaires :</span> <span class="cmpcat_description">Ces cookies sont absolument nécessaires au bon fonctionnement de notre site et ne peuvent être désactivés.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_1" check_mode="checked" disabled="disabled" checked onclick="pop(this)"><span class="slider round"></span></label></div> </div> <div class="cmpcategory_2" id="category_2" > <span class="cmpcat_title">Cookies de mesure de la performance:</span> <span class="cmpcat_description">Ces cookies nous permettent de mesurer l\'activité des utilisateurs sur notre site. Ils nous sont importants pour vous proposer une naviagation et du contenu adaptés.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox" id="check_2"check_mode="none"onclick="pop(this)"><span class="slider round"></span> </label></div>  </div> <div class="cmpcategory_2" id="category_3"> <span class="cmpcat_title">Cookies de fonctionnalité:</span> <span class="cmpcat_description">Ces cookies nous permettent de mettre en oeuvre des fonctionnalités de personnalisation de votre expérience sur notre site</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_3"check_mode="none"onclick="pop(this)"><span class="slider round"></span></label></div> </div> <div class="cmpcategory_2" id="category_4"> <span class="cmpcat_title">Cookies de publicité ciblée:</span> <span class="cmpcat_description">Ces cookies peuvent être déposés par nos partenaires publicitaires afin de vous proposer des publicités sur des contenus pertinents et qui vous intéressent.</span> <div class="toggle_validation" id="toggle_validation"><label class="switch"><input type="checkbox"id="check_4"check_mode="none"onclick="pop(this)"> <span class="slider round"> </span> </label></div> </div> </div> <div> <div class="cmpbutton1" type="button" id="save_choice">SAUVEGARDER MA SELECTION</div> </div> </div> ')
  
 var message_creat = document.getElementById('containerauto')
-message_creat.insertAdjacentHTML('beforeend','<div id="message"style="padding:4%;display:block;" ><div class="cmpwrapper1" id="title"> <div class="cmplogo" style="grid-column:1/3;grid-row:1;"><img style="width:80px;height:40px;" src='+dl_logo+'></div> <span class="cmptitle" style= "grid-column:2/3;grid-row:1;">NOUS RESPECTONS VOTRE VIE PRIVEE</span> <div id="denied" type="button" class="cmpbutton3">continuer sans accepter</div> </div> <span class="cmpdescription">Mon Nouveau mètre carré utilise des cookies pour personnaliser le contenu et vous offrir une expérience sur mesure. Vous pouvez gérer vos préférences et en savoir plus en cliquant sur "Paramètres des cookies" et à tout moment dans notre <a href='+dl_policies+' class="cmplink">Politique de confidentialité.</a></sp><div id="wrapper"style="display:grid;grid-template-columns:repeat(3,1fr);grid-gap:30px;grid-auto-rows:minmax(30px,auto);align-items:center;"> <div class="cmpbutton2" id="accept"type="button">ACCEPTER</div>	<div class="cmpfavoritestyled2" id="parameter"onclick="redirect(this)"type="button">PERSONNALISER MES CHOIX</div> </div> </div></div>')
+message_creat.insertAdjacentHTML('beforeend','<div id="message"style="padding:4%;display:block;" ><div class="cmpwrapper1" id="title"> <div class="cmplogo" style="grid-column:1/3;grid-row:1;"><img style="width:80px;height:40px;" src='+banner_logo+'></div> <span class="cmptitle" style= "grid-column:2/3;grid-row:1;">NOUS RESPECTONS VOTRE VIE PRIVEE</span> <div id="denied" type="button" class="cmpbutton3">continuer sans accepter</div> </div> <span class="cmpdescription">Mon Nouveau mètre carré utilise des cookies pour personnaliser le contenu et vous offrir une expérience sur mesure. Vous pouvez gérer vos préférences et en savoir plus en cliquant sur "Paramètres des cookies" et à tout moment dans notre <a href='+policies+' class="cmplink">Politique de confidentialité.</a></sp><div id="wrapper"style="display:grid;grid-template-columns:repeat(3,1fr);grid-gap:30px;grid-auto-rows:minmax(30px,auto);align-items:center;"> <div class="cmpbutton2" id="accept"type="button">ACCEPTER</div>	<div class="cmpfavoritestyled2" id="parameter"onclick="redirect(this)"type="button">PERSONNALISER MES CHOIX</div> </div> </div></div>')
 
 window.dataLayer = window.dataLayer || [];
 var banner = document.getElementById('banner')
@@ -197,9 +197,9 @@ var wrapper = document.getElementById('wrapper')
 wrapper.setAttribute('style','display:grid;grid-template-columns:repeat(1,1fr);grid-gap:10px;grid-auto-rows:minmax(50px,auto);align-items:center;')
   
 var button_denied= document.getElementById('parameter')
-button_denied.setAttribute('style','grid-column: 1;grid-row: 2/2;border: 0;font-size:0.9rem;color:rgba('+dl_couleur_primaire+',1);background-color:white;font-family:roboto;text-align:center;')
+button_denied.setAttribute('style','grid-column: 1;grid-row: 2/2;border: 0;font-size:0.9rem;color:rgba('+custom_color+',1);background-color:white;font-family:roboto;text-align:center;')
 	var button_accept= document.getElementById('accept')
-	button_accept.setAttribute('style','grid-column: 1;grid-row: 1/2;border:0;padding:1px;font-size:0.9rem;font-family:roboto;text-align:center;color:rgba('+dl_couleur_primaire+',1);background-color:rgba('+dl_couleur_primaire+',0.12);border-radius:4px')
+	button_accept.setAttribute('style','grid-column: 1;grid-row: 1/2;border:0;padding:1px;font-size:0.9rem;font-family:roboto;text-align:center;color:rgba('+custom_color+',1);background-color:rgba('+custom_color+',0.12);border-radius:4px')
 
 var logo_pref= document.getElementById('logo_pref_center')
 logo_pref.setAttribute('style','grid-column:1/3;grid-row:1;')
@@ -221,7 +221,7 @@ toggle.forEach(function(a){
 		var check_mode_2 = check_box_2.getAttribute('check_mode')
 		if(check_mode_2.indexOf('checked')!=-1){
 			var cat_i_string_2 = document.getElementById('category_2')
-			cat_i_string_2.setAttribute('style','position:relative;background:rgba('+dl_couleur_primaire+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+dl_couleur_primaire+');')
+			cat_i_string_2.setAttribute('style','position:relative;background:rgba('+custom_color+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+custom_color+');')
 			}
 		else {
 			var cat_i_string_2 = document.getElementById('category_2')
@@ -233,7 +233,7 @@ var check_box_3 = document.getElementById('check_3')
 		var check_mode_3 = check_box_3.getAttribute('check_mode')
 		if(check_mode_3.indexOf('checked')!=-1){
 			var cat_i_string_3 = document.getElementById('category_3')
-			cat_i_string_3.setAttribute('style','position:relative;background:rgba('+dl_couleur_primaire+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+dl_couleur_primaire+');')
+			cat_i_string_3.setAttribute('style','position:relative;background:rgba('+custom_color+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+custom_color+');')
 			}
 		else {
 			var cat_i_string_3 = document.getElementById('category_3')
@@ -245,7 +245,7 @@ var check_box_3 = document.getElementById('check_3')
 		var check_mode_4 = check_box_4.getAttribute('check_mode')
 		if(check_mode_4.indexOf('checked')!=-1){
 			var cat_i_string = document.getElementById('category_4')
-			cat_i_string.setAttribute('style','position:relative;background:rgba('+dl_couleur_primaire+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+dl_couleur_primaire+');')
+			cat_i_string.setAttribute('style','position:relative;background:rgba('+custom_color+',0.12);border-radius:4px;margin-top:20px;padding:1%;border: 1.5px;border-style: solid;border-color: rgba('+custom_color+');')
 			}
 		else {
 			var cat_i_string = document.getElementById('category_4')
