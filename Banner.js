@@ -8,6 +8,8 @@ var dl_police='https://fonts.googleapis.com/css?family=Roboto&display=swap';//li
 
 //FONCTIONS JAVASCRIPT
 function GCM_setdefaultconsent(){
+	window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
 	gtag('consent', 'default', {
   'ad_storage': 'denied',
   'ad_user_data': 'denied',
