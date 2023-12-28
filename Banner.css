@@ -59,6 +59,14 @@ left:0;
   margin-top: 2%;
   margin-bottom:2%;
 }
+.cmpwrapper2 {
+  display:grid;
+  grid-template-columns:auto auto;
+  grid-gap:20px;
+  grid-auto-rows:minmax(20px,auto);
+  align-items:center;
+  margin-bottom:2%;
+}
 .cmptitle{
   text-align:left;
   border:0;
