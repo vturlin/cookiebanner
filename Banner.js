@@ -26,26 +26,24 @@ function GCM_setupdatedconsent_ads(consent){
 	consent.includes('4') ? 
 	gtag('consent', 'update', {
     	'ad_storage': 'granted'
-  	});
+  	})
 	gtag('consent', 'update', {
     	'ad_personalization': 'granted'
-  	});
+  	})
 	gtag('consent', 'update', {
     	'ad_user_data': 'granted'
-  	});	
-	}
+  	})	
 	:
 	gtag('consent', 'update', {
     	'ad_storage': 'denied'
-  	});
+  	})
 	gtag('consent', 'update', {
     	'ad_personalization': 'denied'
-  	});
+  	})
 	gtag('consent', 'update', {
     	'ad_user_data': 'denied'
-  	});
+  	})
 	}
-}
 
 function GCM_setupdatedconsent_analytics(consent){
 	
@@ -55,11 +53,11 @@ function GCM_setupdatedconsent_analytics(consent){
 	consent.includes('2') ?
 	gtag('consent', 'update', {
     'analytics_storage': 'granted'
-  });}
+  })
 	:
 	gtag('consent', 'update', {
     	'analytics_storage': 'denied'
-  });}
+  })
 }
 	
 function setCookie(consent) {//function to set cookie on domain
