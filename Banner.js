@@ -202,7 +202,7 @@ if(consent_record == "absent" || consent_mode == "absent" || consent_mode == "em
 		cmptitle.setAttribute('style','grid-column:2/2;grid-row:2;border:0;font-family:roboto;font-size:1.1rem;')
 		
 		var wrapper = document.getElementById('wrapper')
-		wrapper.setAttribute('style','display:grid;grid-template-columns:repeat(1,1fr);grid-gap:10px;grid-auto-rows:minmax(50px,auto);align-items:center;')
+		wrapper.setAttribute('style','display:grid;grid-template-columns:repeat(1,1fr);grid-auto-rows:minmax(50px,auto);align-items:center;')
 	  
 		var button_denied= document.getElementById('parameter')
 		button_denied.setAttribute('style','grid-column: 1;grid-row: 1/2;border: 0;font-size:0.9rem;color:rgba('+custom_color+',1);background-color:white;font-family:roboto;text-align:center;')
@@ -214,7 +214,7 @@ if(consent_record == "absent" || consent_mode == "absent" || consent_mode == "em
 		logo_pref.setAttribute('style','grid-column:1/2;grid-row:1;')
 	
 		var title_pref= document.getElementById('title_pref_center')
-		title_pref.setAttribute('style','text-align:left;grid-column:2/2;grid-row:2;border:0;font-family:roboto;font-size:1.1rem;')
+		title_pref.setAttribute('style','text-align:right;grid-column:2/2;grid-row:1;border:0;font-family:roboto;font-size:1.1rem;')
 	
 		var category= document.getElementById('category')
 		category.setAttribute('style','')
