@@ -226,13 +226,13 @@ left:0;
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: white;
+  background-color: #f1f1f1;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
   transform: translateX(15px);
-  background-color: black;
+  background-color: #abb8c3;
 }
 /* Rounded sliders */
 .slider.round {
