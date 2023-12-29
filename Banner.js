@@ -18,7 +18,8 @@ function GCM_setdefaultconsent(){
 	  'personalization_storage': "denied",
 	  'security_storage': "granted",
 	  'ad_user_data': "denied",
-	  'ad_personalization': "denied"
+	  'ad_personalization': "denied",
+	'wait_for_update': 500
 	});
 }
 
