@@ -196,10 +196,10 @@ if(consent_record == "absent" || consent_mode == "absent" || consent_mode == "em
 		denied.setAttribute('style','text-align:right;grid-column:2/2;grid-row:1;border:0;font-family:roboto;font-size:1.1rem;')
 
 		var cmplogo = document.getElementById('cmplogo')
-		denied.setAttribute('style','grid-column:1/2;grid-row:1;border:0;font-family:roboto;font-size:1.1rem;')
+		cmplogo.setAttribute('style','grid-column:1/2;grid-row:1;border:0;font-family:roboto;font-size:1.1rem;')
 
 		var cmptitle = document.getElementById('cmptitle')
-		denied.setAttribute('style','grid-column:2/2;grid-row:2;border:0;font-family:roboto;font-size:1.1rem;')
+		cmptitle.setAttribute('style','grid-column:2/2;grid-row:2;border:0;font-family:roboto;font-size:1.1rem;')
 		
 		var wrapper = document.getElementById('wrapper')
 		wrapper.setAttribute('style','display:grid;grid-template-columns:repeat(1,1fr);grid-gap:10px;grid-auto-rows:minmax(50px,auto);align-items:center;')
