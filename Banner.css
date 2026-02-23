@@ -95,7 +95,7 @@ left:0;
   text-align:justify;
 }
 .cmpcategory_1{
-  postion:relative;
+  position:relative;
   background:rgba(198,206,0,0.12);
   border-radius:4px;
   margin-top:20px;
@@ -105,7 +105,7 @@ left:0;
   border-color: rgba(198,206,0);
 }
 .cmpcategory_2{
-  postion:relative;
+  position:relative;
   background:rgba(192,192,192,0.3799999952316284);
   border-radius:4px;
   margin-top:20px;
@@ -251,4 +251,5 @@ input:checked + .slider:before {
   max-width:40px;
   max-height:40px;
 }
+
 
